@@ -1,5 +1,104 @@
 <html>
-<body>
-<h1>Course Hoga! Yahi Hoga</h1>
+<head>
+  <meta charset="utf-8">
+  
+  <!-- Page title -->
+  <title>Minimal Coming Soon</title>
+
+  <link rel="shortcut icon" href="favicon.png">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css"> <!-- Regular stylesheet -->
+  <link rel="stylesheet" href="css/green.css"> <!-- Pick color scheme (black.css, blue.css, dark_green.css, green.css, white.css)-->
+  
+  <!-- Fonts -->
+  <link href="http://fonts.googleapis.com/css?family=Quattrocento" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Raleway:100" rel="stylesheet" type="text/css">
+  <link href="http://fonts.googleapis.com/css?family=Cantarell:regular,italic,bold" rel="stylesheet" type="text/css">
+  
+  <!-- JavaScript -->
+  <script src="js/jquery-1.5.1.min.js"></script> <!-- Load jQuery library -->
+  <script src="js/modernizr-1.7.min.js"></script> <!-- Load Modernizr -->
+  <script>
+	$(function () {
+		
+		/* Customization */
+		$("#customization input").change(function () {
+			if ( $(this).is(":checked") ) {
+				$("." + $(this).attr("name")).slideDown();
+			} else {
+				$("." + $(this).attr("name")).slideUp();
+			}					 
+		});
+		$("#bg_images img").click(function () {
+			src = $(this).attr("alt");
+			$("body").css("background", "#000000");
+			$("#background_image").fadeOut(function () {
+				$(this).attr("src", src).fadeIn();
+			});
+		});
+		$(".colors a").each(function () {
+			$(this).css("background-color", $(this).text());
+			$(this).text("");
+		});
+		$("#customization input").each(function () {
+			if ( !$(this).is(":checked") ) {
+				$("." + $(this).attr("name")).addClass("hidden");
+			}
+		});
+		$(".colors a").click(function () {
+			color = $(this).attr("class");
+			$("#background_image").addClass("hidden");
+			$("body").removeClass("active_bg_image");
+			$("header").css("background-image", "url(img/bg_header_" + color + ".png)");
+			$("body").css("background-color", $(this).css("background-color"));
+			$("#progressbar").css("background-image", "url(img/progressbar_fill_" + color + ".png)");
+			$("input[type=submit]").css("background-image", "url(img/form_button_" + color + ".png)");
+		});
+		$(".bg_image").click(function () {
+			$("#background_image").removeClass("hidden");
+			$("body").addClass("active_bg_image");
+			$("header").css("background-image", "url(img/bg_header_white.png)");
+			$("body").css("background-color", "#FFFFFF");
+			$("#progressbar").css("background-image", "url(img/progressbar_fill_white.png)");
+			$("input[type=submit]").css("background-image", "url(img/form_button_white.png)");
+		});
+		
+		/* Put your JavaScript here */
+			
+	});
+  </script>
+</head>
+  <body style="background-color: rgb(65, 126, 137);">
+  <div id="pattern"><div id="gradient">
+
+	
+  
+	<!-- Main page -->
+    <div id="main_page">
+  
+	  <!-- Header -->
+	  <header>
+	    <h1>Course Hoga Coming Soon</h1> <!-- Set the page title -->
+	  </header>
+	  
+	  <!-- Additional content -->
+	  <div id="content"> &nbsp;	  
+		  
+		  
+		  <!-- Custom text -->
+		  <section class="text" style="display: block;">
+			<p>Course Hoga! Yahi Hoga</p>
+		  </section>		  
+	  </div>
+	  
+	</div>
+	
+	
+	
+	
+	
+	
+  </div></div>
 </body>
 </html>
